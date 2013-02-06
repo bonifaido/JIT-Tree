@@ -1,0 +1,1254 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hotspot_log version='160 1' process='3516' time_ms='1360090370104'>
+<vm_version>
+<name>
+Java HotSpot(TM) 64-Bit Server VM
+</name>
+<release>
+23.3-b01
+</release>
+<info>
+Java HotSpot(TM) 64-Bit Server VM (23.3-b01) for bsd-amd64 JRE (1.7.0_07-b10), built on Aug 28 2012 18:14:29 by &quot;java_re&quot; with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00)
+</info>
+</vm_version>
+<vm_arguments>
+<args>
+-XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation 
+</args>
+<command>
+target/jittree-0.1.jar
+</command>
+<launcher>
+SUN_STANDARD
+</launcher>
+<properties>
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.version=23.3-b01
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+java.vm.info=mixed mode, sharing
+java.ext.dirs=/Users/bonifaido/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/endorsed
+sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib
+java.library.path=/Users/bonifaido/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre
+java.class.path=target/jittree-0.1.jar
+sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/classes
+java.vm.specification.vendor=Oracle Corporation
+java.vm.specification.version=1.7
+java.vm.vendor=Oracle Corporation
+sun.java.command=target/jittree-0.1.jar
+sun.java.launcher=SUN_STANDARD
+</properties>
+</vm_arguments>
+<tty>
+<writer thread='2567'/>
+<make_not_compilable thread='2567' method='java/lang/invoke/CallSite setTargetNormal (Ljava/lang/invoke/MethodHandle;)V' bytes='6' count='0' iicount='0' stamp='0.022'/>
+<make_not_compilable thread='2567' method='java/lang/invoke/CallSite setTargetVolatile (Ljava/lang/invoke/MethodHandle;)V' bytes='6' count='0' iicount='0' stamp='0.022'/>
+<writer thread='17923'/>
+<thread_logfile thread='17923' filename='/var/folders/0x/3gc0cp4n3mnc_95z_fnrft780000gn/T//hs_c17923_pid3516.log'/>
+<writer thread='18179'/>
+<thread_logfile thread='18179' filename='/var/folders/0x/3gc0cp4n3mnc_95z_fnrft780000gn/T//hs_c18179_pid3516.log'/>
+<writer thread='2567'/>
+<task_queued compile_id='1' method='java/lang/String hashCode ()I' bytes='55' count='670' backedge_count='5000' iicount='670' stamp='0.085' comment='count' hot_count='670'/>
+<writer thread='17923'/>
+<nmethod compile_id='1' compiler='C2' entry='0x000000010fc8d6a0' size='880' address='0x000000010fc8d550' relocation_offset='288' insts_offset='336' stub_offset='720' scopes_data_offset='752' scopes_pcs_offset='792' dependencies_offset='856' nul_chk_table_offset='864' oops_offset='744' method='java/lang/String hashCode ()I' bytes='55' count='827' backedge_count='7052' iicount='827' stamp='0.093'/>
+<writer thread='2567'/>
+<task_queued compile_id='2' method='java/lang/String indexOf (II)I' bytes='70' count='432' backedge_count='5000' iicount='432' stamp='0.320' comment='count' hot_count='432'/>
+<task_queued compile_id='3' method='sun/nio/cs/US_ASCII$Encoder encode ([CII[B)I' bytes='107' count='169' backedge_count='5000' iicount='169' stamp='0.320' comment='count' hot_count='169'/>
+<writer thread='17923'/>
+<nmethod compile_id='2' compiler='C2' entry='0x000000010fc8df20' size='960' address='0x000000010fc8ddd0' relocation_offset='288' insts_offset='336' stub_offset='720' scopes_data_offset='768' scopes_pcs_offset='832' dependencies_offset='912' handler_table_offset='920' nul_chk_table_offset='944' oops_offset='760' method='java/lang/String indexOf (II)I' bytes='70' count='436' backedge_count='5252' iicount='436' stamp='0.323'/>
+<writer thread='18179'/>
+<nmethod compile_id='3' compiler='C2' entry='0x000000010fc92340' size='1688' address='0x000000010fc921d0' relocation_offset='288' insts_offset='368' stub_offset='1040' scopes_data_offset='1104' scopes_pcs_offset='1416' dependencies_offset='1608' handler_table_offset='1616' nul_chk_table_offset='1664' oops_offset='1096' method='sun/nio/cs/US_ASCII$Encoder encode ([CII[B)I' bytes='107' count='169' backedge_count='5000' iicount='169' stamp='0.324'/>
+<writer thread='2567'/>
+<task_queued compile_id='4' method='java/lang/String charAt (I)C' bytes='29' count='5000' backedge_count='1' iicount='10000' stamp='0.325' comment='count' hot_count='10000'/>
+<writer thread='17923'/>
+<nmethod compile_id='4' compiler='C2' entry='0x000000010fc8f3a0' size='680' address='0x000000010fc8f250' relocation_offset='288' insts_offset='336' stub_offset='496' scopes_data_offset='528' scopes_pcs_offset='576' dependencies_offset='656' nul_chk_table_offset='664' oops_offset='520' method='java/lang/String charAt (I)C' bytes='29' count='5000' backedge_count='1' iicount='10000' stamp='0.326'/>
+<writer thread='2567'/>
+<task_queued compile_id='5' method='java/util/Arrays fill ([BIIB)V' bytes='28' count='381' backedge_count='5000' iicount='381' stamp='0.357' comment='count' hot_count='381'/>
+<writer thread='17923'/>
+<nmethod compile_id='5' compiler='C2' entry='0x000000010fc8ff60' size='904' address='0x000000010fc8fe10' relocation_offset='288' insts_offset='336' stub_offset='592' scopes_data_offset='632' scopes_pcs_offset='768' dependencies_offset='880' nul_chk_table_offset='888' oops_offset='616' method='java/util/Arrays fill ([BIIB)V' bytes='28' count='10000' backedge_count='5781' iicount='401' stamp='0.364'/>
+<writer thread='2567'/>
+<task_queued compile_id='6' method='java/util/Properties$LineReader readLine ()I' bytes='452' count='101' backedge_count='5000' iicount='101' stamp='0.377' comment='count' hot_count='101'/>
+<task_queued compile_id='7' method='java/util/Properties loadConvert ([CII[C)Ljava/lang/String;' bytes='505' count='223' backedge_count='5000' iicount='223' stamp='0.377' comment='count' hot_count='223'/>
+<writer thread='18179'/>
+<nmethod compile_id='7' compiler='C2' entry='0x000000010fc934e0' size='3328' address='0x000000010fc93350' relocation_offset='288' insts_offset='400' stub_offset='2288' scopes_data_offset='2368' scopes_pcs_offset='2952' dependencies_offset='3224' handler_table_offset='3232' nul_chk_table_offset='3304' oops_offset='2328' method='java/util/Properties loadConvert ([CII[C)Ljava/lang/String;' bytes='505' count='240' backedge_count='6090' iicount='240' stamp='0.407'/>
+<writer thread='17923'/>
+<nmethod compile_id='6' compiler='C2' entry='0x000000010fc95120' size='3904' address='0x000000010fc94f90' relocation_offset='288' insts_offset='400' stub_offset='2416' scopes_data_offset='2488' scopes_pcs_offset='3352' dependencies_offset='3752' handler_table_offset='3760' nul_chk_table_offset='3880' oops_offset='2456' method='java/util/Properties$LineReader readLine ()I' bytes='452' count='5000' backedge_count='5000' iicount='150' stamp='0.412'/>
+<writer thread='2567'/>
+<task_queued compile_id='8' method='sun/nio/cs/UTF_8$Encoder encode ([CII[B)I' bytes='361' count='225' backedge_count='5000' iicount='225' stamp='0.414' comment='count' hot_count='225'/>
+<writer thread='18179'/>
+<nmethod compile_id='8' compiler='C2' entry='0x000000010fc94360' size='3488' address='0x000000010fc941d0' relocation_offset='288' insts_offset='400' stub_offset='2224' scopes_data_offset='2320' scopes_pcs_offset='3056' dependencies_offset='3392' handler_table_offset='3400' nul_chk_table_offset='3448' oops_offset='2280' method='sun/nio/cs/UTF_8$Encoder encode ([CII[B)I' bytes='361' count='267' backedge_count='7970' iicount='267' stamp='0.432'/>
+<writer thread='13059'/>
+<destroy_vm stamp='1.883'/>
+<tty_done stamp='2.222'/>
+</tty>
+<compilation_log thread='18179'>
+<start_compile_thread thread='18179' process='3516' stamp='0.070'/>
+<task compile_id='3' method='sun/nio/cs/US_ASCII$Encoder encode ([CII[B)I' bytes='107' count='169' backedge_count='5000' iicount='169' stamp='0.320'>
+<phase name='parse' nodes='3' stamp='0.320'>
+<type id='620' name='int'/>
+<klass id='711' name='[C' flags='1041'/>
+<klass id='714' name='[B' flags='1041'/>
+<klass id='720' name='sun/nio/cs/US_ASCII$Encoder' flags='10'/>
+<method id='721' holder='720' name='encode' return='620' arguments='711 620 620 714' flags='1' bytes='107' iicount='169'/>
+<parse method='721' uses='169' stamp='0.321'>
+<bc code='190' bci='7'/>
+<uncommon_trap bci='7' reason='null_check' action='maybe_recompile'/>
+<bc code='184' bci='8'/>
+<klass id='723' name='java/lang/Math' flags='17'/>
+<method id='724' holder='723' name='min' return='620' arguments='620 620' flags='9' bytes='11' iicount='2141'/>
+<call method='724' count='111' prof_factor='1' inline='1'/>
+<intrinsic id='_min' nodes='3'/>
+<uncommon_trap bci='14' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='14' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='162' bci='17'/>
+<branch target_bci='104' taken='112' not_taken='6595' cnt='6707' prob='0.016699'/>
+<uncommon_trap bci='20' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='20' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='25'/>
+<uncommon_trap bci='25' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='25' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='33'/>
+<branch target_bci='50' taken='0' not_taken='6595' cnt='6595' prob='never'/>
+<bc code='84' bci='46'/>
+<uncommon_trap bci='46' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='184' bci='52'/>
+<type id='614' name='boolean'/>
+<type id='615' name='char'/>
+<klass id='700' name='java/lang/Character' flags='17'/>
+<method id='725' holder='700' name='isHighSurrogate' return='614' arguments='615' flags='9' bytes='18' iicount='1'/>
+<call method='725' count='0' prof_factor='1' inline='1'/>
+<inline_fail reason='never executed'/>
+<direct_call bci='52'/>
+<bc code='153' bci='55'/>
+<branch target_bci='89' taken='0' not_taken='0'/>
+<bc code='162' bci='61'/>
+<branch target_bci='89' taken='0' not_taken='0'/>
+<bc code='52' bci='66'/>
+<uncommon_trap bci='66' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='184' bci='67'/>
+<method id='726' holder='700' name='isLowSurrogate' return='614' arguments='615' flags='9' bytes='18' iicount='1'/>
+<call method='726' count='0' prof_factor='1' inline='1'/>
+<inline_fail reason='never executed'/>
+<direct_call bci='67'/>
+<bc code='153' bci='70'/>
+<branch target_bci='89' taken='0' not_taken='0'/>
+<bc code='164' bci='77'/>
+<branch target_bci='86' taken='0' not_taken='0'/>
+<bc code='84' bci='100'/>
+<uncommon_trap bci='100' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='17'/>
+<branch target_bci='104' taken='112' not_taken='6595' cnt='6707' prob='0.016699'/>
+<parse_done nodes='359' memory='88712' stamp='0.321'/>
+</parse>
+<phase_done nodes='361' stamp='0.321'/>
+</phase>
+<phase name='optimizer' nodes='361' stamp='0.321'>
+<phase name='idealLoop' nodes='361' stamp='0.321'>
+<loop_tree>
+<loop idx='361' >
+<loop idx='362' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='372' stamp='0.321'/>
+</phase>
+<phase name='idealLoop' nodes='372' stamp='0.321'>
+<loop_tree>
+<loop idx='361' >
+<loop idx='362' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='372' stamp='0.322'/>
+</phase>
+<phase name='idealLoop' nodes='372' stamp='0.322'>
+<loop_tree>
+<loop idx='361' >
+<loop idx='362' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='372' stamp='0.322'/>
+</phase>
+<phase name='ccp' nodes='372' stamp='0.322'>
+<phase_done nodes='372' stamp='0.322'/>
+</phase>
+<phase name='idealLoop' nodes='372' stamp='0.322'>
+<loop_tree>
+<loop idx='361' >
+<loop idx='362' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='380' stamp='0.322'/>
+</phase>
+<phase name='idealLoop' nodes='380' stamp='0.322'>
+<loop_tree>
+<loop idx='361' >
+<loop idx='362' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='388' stamp='0.322'/>
+</phase>
+<phase_done nodes='391' stamp='0.322'/>
+</phase>
+<phase name='matcher' nodes='391' stamp='0.322'>
+<phase_done nodes='187' stamp='0.323'/>
+</phase>
+<phase name='regalloc' nodes='243' stamp='0.323'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='373' stamp='0.324'/>
+</phase>
+<phase name='output' nodes='373' stamp='0.324'>
+<phase_done nodes='399' stamp='0.324'/>
+</phase>
+<task_done success='1' nmsize='728' count='169' backedge_count='5000' inlined_bytes='11' stamp='0.324'/>
+</task>
+<task compile_id='7' method='java/util/Properties loadConvert ([CII[C)Ljava/lang/String;' bytes='505' count='240' backedge_count='6090' iicount='240' stamp='0.379'>
+<phase name='parse' nodes='3' stamp='0.379'>
+<klass id='632' name='java/lang/String' flags='17'/>
+<klass id='711' name='[C' flags='1041'/>
+<type id='620' name='int'/>
+<klass id='665' name='java/util/Properties' flags='1'/>
+<method id='720' holder='665' name='loadConvert' return='632' arguments='711 620 620 711' flags='2' bytes='505' iicount='240'/>
+<klass id='723' name='java/lang/IllegalArgumentException' flags='1'/>
+<uncommon_trap method='720' bci='383' reason='unloaded' action='reinterpret' index='13' klass='723'/>
+<parse method='720' uses='240' stamp='0.379'>
+<bc code='190' bci='2'/>
+<uncommon_trap bci='2' reason='null_check' action='maybe_recompile'/>
+<bc code='162' bci='4'/>
+<branch target_bci='27' taken='166' not_taken='0' cnt='166' prob='always'/>
+<bc code='156' bci='14'/>
+<branch target_bci='21' taken='0' not_taken='0'/>
+<bc code='188' bci='23'/>
+<klass id='652' name='java/lang/OutOfMemoryError' flags='1'/>
+<dependency type='leaf_type' ctxk='652'/>
+<uncommon_trap bci='39' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='39' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='162' bci='42'/>
+<branch target_bci='492' taken='167' not_taken='7656' cnt='7823' prob='0.0213473'/>
+<uncommon_trap bci='45' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='45' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='50'/>
+<uncommon_trap bci='50' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='50' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='160' bci='57'/>
+<branch target_bci='479' taken='7567' not_taken='89' cnt='7656' prob='0.988375'/>
+<bc code='52' bci='65'/>
+<uncommon_trap bci='65' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='160' bci='72'/>
+<branch target_bci='413' taken='89' not_taken='0' cnt='89' prob='always'/>
+<bc code='162' bci='84'/>
+<branch target_bci='399' taken='0' not_taken='0'/>
+<uncommon_trap bci='87' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='87' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='92'/>
+<uncommon_trap bci='92' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='187' bci='383'/>
+<uncommon_trap bci='383' reason='unloaded' action='reinterpret' index='13'/>
+<bc code='162' bci='84'/>
+<branch target_bci='399' taken='0' not_taken='0'/>
+<bc code='85' bci='409'/>
+<uncommon_trap bci='409' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='160' bci='417'/>
+<branch target_bci='427' taken='89' not_taken='0' cnt='89' prob='always'/>
+<bc code='160' bci='431'/>
+<branch target_bci='441' taken='89' not_taken='0' cnt='89' prob='always'/>
+<bc code='160' bci='445'/>
+<branch target_bci='455' taken='89' not_taken='0' cnt='89' prob='always'/>
+<bc code='160' bci='459'/>
+<branch target_bci='466' taken='89' not_taken='0' cnt='89' prob='always'/>
+<bc code='85' bci='475'/>
+<uncommon_trap bci='475' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='85' bci='488'/>
+<uncommon_trap bci='488' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='42'/>
+<branch target_bci='492' taken='167' not_taken='7656' cnt='7567' prob='0.0213473'/>
+<bc code='187' bci='492'/>
+<dependency type='leaf_type' ctxk='652'/>
+<bc code='183' bci='501'/>
+<type id='622' name='void'/>
+<method id='722' holder='632' name='&lt;init&gt;' return='622' arguments='711 620 620' flags='1' bytes='67' iicount='1298'/>
+<call method='722' count='167' prof_factor='1' inline='1'/>
+<klass id='727' name='java/lang/StringIndexOutOfBoundsException' unloaded='1'/>
+<uncommon_trap method='722' bci='43' reason='unloaded' action='reinterpret' index='6' klass='727'/>
+<uncommon_trap method='722' bci='26' reason='unloaded' action='reinterpret' index='6' klass='727'/>
+<uncommon_trap method='722' bci='13' reason='unloaded' action='reinterpret' index='6' klass='727'/>
+<parse method='722' uses='167' stamp='0.380'>
+<bc code='183' bci='1'/>
+<klass id='631' name='java/lang/Object' flags='1'/>
+<method id='724' holder='631' name='&lt;init&gt;' return='622' flags='1' bytes='1' iicount='6047'/>
+<call method='724' count='-1' prof_factor='0.128659' inline='1'/>
+<parse method='724' uses='-1' stamp='0.380'>
+<parse_done nodes='640' memory='154112' stamp='0.386'/>
+</parse>
+<bc code='187' bci='26'/>
+<uncommon_trap bci='26' reason='unloaded' action='reinterpret' index='6'/>
+<bc code='187' bci='43'/>
+<uncommon_trap bci='43' reason='unloaded' action='reinterpret' index='6'/>
+<bc code='184' bci='60'/>
+<klass id='725' name='java/util/Arrays' flags='1'/>
+<method id='726' holder='725' name='copyOfRange' return='711' arguments='711 620 620' flags='9' bytes='63' iicount='1298'/>
+<call method='726' count='-1' prof_factor='0.128659' inline='1'/>
+<uncommon_trap method='726' bci='8' reason='unloaded' action='reinterpret' index='37' klass='723'/>
+<inline_fail reason='too big'/>
+<direct_call bci='60'/>
+<parse_done nodes='717' memory='167864' stamp='0.386'/>
+</parse>
+<parse_done nodes='719' memory='168816' stamp='0.386'/>
+</parse>
+<phase_done nodes='727' stamp='0.386'/>
+</phase>
+<phase name='optimizer' nodes='727' stamp='0.386'>
+<phase name='idealLoop' nodes='751' stamp='0.386'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='763' >
+</loop>
+<loop idx='773' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='800' stamp='0.387'/>
+</phase>
+<phase name='escapeAnalysis' nodes='800' stamp='0.387'>
+<phase_done nodes='801' stamp='0.387'/>
+</phase>
+<phase name='idealLoop' nodes='801' stamp='0.387'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='763' inner_loop='1' >
+</loop>
+<loop idx='773' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='845' stamp='0.388'/>
+</phase>
+<phase name='idealLoop' nodes='845' stamp='0.388'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='1026' inner_loop='1' main_loop='1026' >
+</loop>
+<loop idx='1077' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1136' stamp='0.388'/>
+</phase>
+<phase name='idealLoop' nodes='1136' stamp='0.388'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='953' inner_loop='1' pre_loop='763' >
+</loop>
+<loop idx='1169' inner_loop='1' main_loop='1169' >
+</loop>
+<loop idx='868' inner_loop='1' post_loop='763' >
+</loop>
+<loop idx='1248' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1338' stamp='0.389'/>
+</phase>
+<phase name='ccp' nodes='1338' stamp='0.389'>
+<phase_done nodes='1338' stamp='0.390'/>
+</phase>
+<phase name='idealLoop' nodes='1338' stamp='0.390'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='953' inner_loop='1' pre_loop='763' >
+</loop>
+<loop idx='1169' inner_loop='1' main_loop='1169' >
+</loop>
+<loop idx='868' inner_loop='1' post_loop='763' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1386' stamp='0.390'/>
+</phase>
+<phase name='idealLoop' nodes='1386' stamp='0.390'>
+<loop_tree>
+<loop idx='755' >
+<loop idx='953' inner_loop='1' pre_loop='763' >
+</loop>
+<loop idx='1169' inner_loop='1' main_loop='1169' >
+</loop>
+<loop idx='868' inner_loop='1' post_loop='763' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1405' stamp='0.391'/>
+</phase>
+<phase_done nodes='1530' stamp='0.391'/>
+</phase>
+<phase name='matcher' nodes='1530' stamp='0.391'>
+<phase_done nodes='694' stamp='0.392'/>
+</phase>
+<phase name='regalloc' nodes='914' stamp='0.393'>
+<regalloc attempts='1' success='1'/>
+<phase_done nodes='1153' stamp='0.406'/>
+</phase>
+<phase name='output' nodes='1153' stamp='0.407'>
+<phase_done nodes='1194' stamp='0.407'/>
+</phase>
+<dependency type='leaf_type' ctxk='652'/>
+<task_done success='1' nmsize='1928' count='240' backedge_count='6090' inlined_bytes='68' stamp='0.407'/>
+</task>
+<task compile_id='8' method='sun/nio/cs/UTF_8$Encoder encode ([CII[B)I' bytes='361' count='226' backedge_count='5128' iicount='226' stamp='0.414'>
+<phase name='parse' nodes='3' stamp='0.415'>
+<type id='620' name='int'/>
+<klass id='711' name='[C' flags='1041'/>
+<klass id='714' name='[B' flags='1041'/>
+<klass id='720' name='sun/nio/cs/UTF_8$Encoder' flags='10'/>
+<method id='721' holder='720' name='encode' return='620' arguments='711 620 620 714' flags='1' bytes='361' iicount='227'/>
+<klass id='726' name='sun/nio/cs/Surrogate$Parser' flags='9'/>
+<uncommon_trap method='721' bci='153' reason='unloaded' action='reinterpret' index='21' klass='726'/>
+<parse method='721' uses='227' stamp='0.415'>
+<bc code='190' bci='13'/>
+<uncommon_trap bci='13' reason='null_check' action='maybe_recompile'/>
+<bc code='184' bci='14'/>
+<klass id='723' name='java/lang/Math' flags='17'/>
+<method id='724' holder='723' name='min' return='620' arguments='620 620' flags='9' bytes='11' iicount='3184'/>
+<call method='724' count='131' prof_factor='1' inline='1'/>
+<intrinsic id='_min' nodes='3'/>
+<bc code='162' bci='24'/>
+<branch target_bci='54' taken='132' not_taken='6815' cnt='6947' prob='0.019001'/>
+<uncommon_trap bci='27' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='27' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='29'/>
+<uncommon_trap bci='29' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='29' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='33'/>
+<branch target_bci='54' taken='0' not_taken='6815' cnt='6815' prob='never'/>
+<bc code='52' bci='48'/>
+<uncommon_trap bci='48' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='50'/>
+<uncommon_trap bci='50' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='24'/>
+<branch target_bci='54' taken='132' not_taken='6815' cnt='6815' prob='0.019001'/>
+<bc code='162' bci='57'/>
+<branch target_bci='358' taken='132' not_taken='0' cnt='132' prob='always'/>
+<uncommon_trap bci='60' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='60' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='65'/>
+<uncommon_trap bci='65' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='65' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='73'/>
+<branch target_bci='90' taken='0' not_taken='0'/>
+<bc code='84' bci='86'/>
+<uncommon_trap bci='86' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='95'/>
+<branch target_bci='137' taken='0' not_taken='0'/>
+<bc code='84' bci='115'/>
+<uncommon_trap bci='115' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='133'/>
+<uncommon_trap bci='133' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='184' bci='139'/>
+<type id='614' name='boolean'/>
+<type id='615' name='char'/>
+<klass id='700' name='java/lang/Character' flags='17'/>
+<method id='725' holder='700' name='isSurrogate' return='614' arguments='615' flags='9' bytes='18' iicount='1'/>
+<call method='725' count='0' prof_factor='1' inline='1'/>
+<inline_fail reason='never executed'/>
+<direct_call bci='139'/>
+<bc code='153' bci='142'/>
+<branch target_bci='298' taken='0' not_taken='0'/>
+<bc code='199' bci='149'/>
+<branch target_bci='163' taken='0' not_taken='0'/>
+<bc code='187' bci='153'/>
+<uncommon_trap bci='153' reason='unloaded' action='reinterpret' index='21'/>
+<bc code='182' bci='175'/>
+<method id='727' holder='726' name='parse' return='620' arguments='615 711 620 620' flags='1' bytes='132' iicount='1'/>
+<dependency type='unique_concrete_method' ctxk='726' x='727'/>
+<call method='727' count='0' prof_factor='1' inline='1'/>
+<klass id='739' name='java/lang/AssertionError' flags='1'/>
+<uncommon_trap method='727' bci='13' reason='unloaded' action='reinterpret' index='5' klass='739'/>
+<inline_fail reason='too big'/>
+<direct_call bci='175'/>
+<bc code='156' bci='182'/>
+<branch target_bci='214' taken='0' not_taken='0'/>
+<bc code='182' bci='186'/>
+<klass id='729' name='java/nio/charset/CodingErrorAction' flags='1'/>
+<klass id='728' name='java/nio/charset/CharsetEncoder' flags='1025'/>
+<method id='730' holder='728' name='malformedInputAction' return='729' flags='1' bytes='5' iicount='1'/>
+<dependency type='unique_concrete_method' ctxk='720' x='730'/>
+<call method='730' count='0' prof_factor='1' inline='1'/>
+<parse method='730' uses='0' stamp='0.416'>
+<parse_done nodes='476' memory='102024' stamp='0.416'/>
+</parse>
+<bc code='165' bci='192'/>
+<branch target_bci='197' taken='0' not_taken='0'/>
+<bc code='182' bci='205'/>
+<method id='732' holder='728' name='replacement' return='714' flags='17' bytes='5' iicount='1'/>
+<call method='732' count='0' prof_factor='1' inline='1'/>
+<parse method='732' uses='0' stamp='0.416'>
+<parse_done nodes='500' memory='105696' stamp='0.416'/>
+</parse>
+<bc code='51' bci='209'/>
+<uncommon_trap bci='209' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='209' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='210'/>
+<uncommon_trap bci='210' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='231'/>
+<uncommon_trap bci='231' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='252'/>
+<uncommon_trap bci='252' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='273'/>
+<uncommon_trap bci='273' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='291'/>
+<uncommon_trap bci='291' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='315'/>
+<uncommon_trap bci='315' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='336'/>
+<uncommon_trap bci='336' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='84' bci='354'/>
+<uncommon_trap bci='354' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='57'/>
+<branch target_bci='358' taken='132' not_taken='0' cnt='132' prob='always'/>
+<parse_done nodes='787' memory='159144' stamp='0.416'/>
+</parse>
+<phase_done nodes='789' stamp='0.417'/>
+</phase>
+<phase name='optimizer' nodes='789' stamp='0.417'>
+<phase name='idealLoop' nodes='813' stamp='0.417'>
+<loop_tree>
+<loop idx='820' >
+</loop>
+<loop idx='814' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='855' stamp='0.418'/>
+</phase>
+<phase name='idealLoop' nodes='855' stamp='0.418'>
+<loop_tree>
+<loop idx='1005' inner_loop='1' main_loop='1005' >
+</loop>
+<loop idx='814' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='1043' stamp='0.418'/>
+</phase>
+<phase name='idealLoop' nodes='1043' stamp='0.418'>
+<loop_tree>
+<loop idx='933' inner_loop='1' pre_loop='820' >
+</loop>
+<loop idx='1075' inner_loop='1' main_loop='1075' >
+</loop>
+<loop idx='880' inner_loop='1' post_loop='820' >
+</loop>
+<loop idx='814' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='1128' stamp='0.419'/>
+</phase>
+<phase name='ccp' nodes='1128' stamp='0.419'>
+<phase_done nodes='1128' stamp='0.419'/>
+</phase>
+<phase name='idealLoop' nodes='1128' stamp='0.419'>
+<loop_tree>
+<loop idx='933' inner_loop='1' pre_loop='820' >
+</loop>
+<loop idx='1075' inner_loop='1' main_loop='1075' >
+</loop>
+<loop idx='880' inner_loop='1' post_loop='820' >
+</loop>
+<loop idx='814' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='1160' stamp='0.420'/>
+</phase>
+<phase name='idealLoop' nodes='1160' stamp='0.420'>
+<loop_tree>
+<loop idx='933' inner_loop='1' pre_loop='820' >
+</loop>
+<loop idx='1075' inner_loop='1' main_loop='1075' >
+</loop>
+<loop idx='880' inner_loop='1' post_loop='820' >
+</loop>
+<loop idx='814' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='1176' stamp='0.420'/>
+</phase>
+<phase_done nodes='1196' stamp='0.420'/>
+</phase>
+<phase name='matcher' nodes='1196' stamp='0.420'>
+<phase_done nodes='537' stamp='0.421'/>
+</phase>
+<phase name='regalloc' nodes='683' stamp='0.422'>
+<regalloc attempts='1' success='1'/>
+<phase_done nodes='991' stamp='0.428'/>
+</phase>
+<phase name='output' nodes='991' stamp='0.428'>
+<phase_done nodes='1035' stamp='0.432'/>
+</phase>
+<dependency type='unique_concrete_method' ctxk='726' x='727'/>
+<dependency type='unique_concrete_method' ctxk='720' x='730'/>
+<task_done success='1' nmsize='1880' count='267' backedge_count='7970' inlined_bytes='21' stamp='0.432'/>
+</task>
+</compilation_log>
+<compilation_log thread='17923'>
+<start_compile_thread thread='17923' process='3516' stamp='0.070'/>
+<task compile_id='1' method='java/lang/String hashCode ()I' bytes='55' count='674' backedge_count='5079' iicount='674' stamp='0.085'>
+<phase name='matcher' nodes='47' stamp='0.086'>
+<phase_done nodes='32' stamp='0.086'/>
+</phase>
+<phase name='regalloc' nodes='37' stamp='0.086'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='47' stamp='0.086'/>
+</phase>
+<phase name='output' nodes='47' stamp='0.086'>
+<phase_done nodes='54' stamp='0.086'/>
+</phase>
+<phase name='matcher' nodes='48' stamp='0.086'>
+<phase_done nodes='33' stamp='0.086'/>
+</phase>
+<phase name='regalloc' nodes='38' stamp='0.086'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='50' stamp='0.086'/>
+</phase>
+<phase name='output' nodes='50' stamp='0.086'>
+<phase_done nodes='57' stamp='0.086'/>
+</phase>
+<phase name='matcher' nodes='48' stamp='0.086'>
+<phase_done nodes='33' stamp='0.086'/>
+</phase>
+<phase name='regalloc' nodes='38' stamp='0.087'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='50' stamp='0.087'/>
+</phase>
+<phase name='output' nodes='50' stamp='0.087'>
+<phase_done nodes='57' stamp='0.087'/>
+</phase>
+<phase name='matcher' nodes='49' stamp='0.087'>
+<phase_done nodes='34' stamp='0.087'/>
+</phase>
+<phase name='regalloc' nodes='39' stamp='0.087'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='53' stamp='0.087'/>
+</phase>
+<phase name='output' nodes='53' stamp='0.087'>
+<phase_done nodes='60' stamp='0.087'/>
+</phase>
+<phase name='matcher' nodes='50' stamp='0.087'>
+<phase_done nodes='35' stamp='0.087'/>
+</phase>
+<phase name='regalloc' nodes='40' stamp='0.087'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='56' stamp='0.087'/>
+</phase>
+<phase name='output' nodes='56' stamp='0.087'>
+<phase_done nodes='63' stamp='0.087'/>
+</phase>
+<phase name='matcher' nodes='51' stamp='0.087'>
+<phase_done nodes='36' stamp='0.087'/>
+</phase>
+<phase name='regalloc' nodes='41' stamp='0.087'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='59' stamp='0.087'/>
+</phase>
+<phase name='output' nodes='59' stamp='0.087'>
+<phase_done nodes='66' stamp='0.087'/>
+</phase>
+<phase name='matcher' nodes='52' stamp='0.088'>
+<phase_done nodes='37' stamp='0.088'/>
+</phase>
+<phase name='regalloc' nodes='42' stamp='0.088'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='62' stamp='0.088'/>
+</phase>
+<phase name='output' nodes='62' stamp='0.088'>
+<phase_done nodes='69' stamp='0.088'/>
+</phase>
+<phase name='matcher' nodes='48' stamp='0.088'>
+<phase_done nodes='33' stamp='0.088'/>
+</phase>
+<phase name='regalloc' nodes='38' stamp='0.088'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='50' stamp='0.088'/>
+</phase>
+<phase name='output' nodes='50' stamp='0.088'>
+<phase_done nodes='57' stamp='0.088'/>
+</phase>
+<phase name='matcher' nodes='43' stamp='0.088'>
+<phase_done nodes='31' stamp='0.088'/>
+</phase>
+<phase name='regalloc' nodes='36' stamp='0.088'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='46' stamp='0.088'/>
+</phase>
+<phase name='output' nodes='46' stamp='0.088'>
+<phase_done nodes='53' stamp='0.088'/>
+</phase>
+<phase name='matcher' nodes='43' stamp='0.088'>
+<phase_done nodes='31' stamp='0.088'/>
+</phase>
+<phase name='regalloc' nodes='36' stamp='0.088'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='46' stamp='0.089'/>
+</phase>
+<phase name='output' nodes='46' stamp='0.089'>
+<phase_done nodes='53' stamp='0.089'/>
+</phase>
+<phase name='matcher' nodes='43' stamp='0.089'>
+<phase_done nodes='31' stamp='0.089'/>
+</phase>
+<phase name='regalloc' nodes='36' stamp='0.089'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='46' stamp='0.089'/>
+</phase>
+<phase name='output' nodes='46' stamp='0.089'>
+<phase_done nodes='53' stamp='0.089'/>
+</phase>
+<phase name='matcher' nodes='47' stamp='0.089'>
+<phase_done nodes='33' stamp='0.089'/>
+</phase>
+<phase name='regalloc' nodes='38' stamp='0.089'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='53' stamp='0.089'/>
+</phase>
+<phase name='output' nodes='53' stamp='0.089'>
+<phase_done nodes='60' stamp='0.089'/>
+</phase>
+<phase name='matcher' nodes='46' stamp='0.089'>
+<phase_done nodes='34' stamp='0.089'/>
+</phase>
+<phase name='regalloc' nodes='39' stamp='0.089'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='55' stamp='0.089'/>
+</phase>
+<phase name='output' nodes='55' stamp='0.089'>
+<phase_done nodes='62' stamp='0.089'/>
+</phase>
+<phase name='matcher' nodes='42' stamp='0.089'>
+<phase_done nodes='30' stamp='0.090'/>
+</phase>
+<phase name='regalloc' nodes='35' stamp='0.090'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='43' stamp='0.090'/>
+</phase>
+<phase name='output' nodes='43' stamp='0.090'>
+<phase_done nodes='50' stamp='0.090'/>
+</phase>
+<phase name='parse' nodes='3' stamp='0.090'>
+<type id='620' name='int'/>
+<klass id='632' name='java/lang/String' flags='17'/>
+<method id='720' holder='632' name='hashCode' return='620' flags='1' bytes='55' iicount='680'/>
+<parse method='720' uses='680' stamp='0.090'>
+<bc code='154' bci='6'/>
+<branch target_bci='53' taken='289' not_taken='227' cnt='516' prob='0.560078'/>
+<bc code='190' bci='13'/>
+<uncommon_trap bci='13' reason='null_check' action='maybe_recompile'/>
+<bc code='158' bci='14'/>
+<branch target_bci='53' taken='0' not_taken='227' cnt='227' prob='never'/>
+<bc code='162' bci='30'/>
+<branch target_bci='48' taken='228' not_taken='8080' cnt='8308' prob='0.0274434'/>
+<uncommon_trap bci='33' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='33' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='39'/>
+<uncommon_trap bci='39' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='190' bci='29'/>
+<uncommon_trap bci='29' reason='null_check' action='maybe_recompile'/>
+<bc code='162' bci='30'/>
+<branch target_bci='48' taken='228' not_taken='8080' cnt='8080' prob='0.0274434'/>
+<parse_done nodes='189' memory='47256' stamp='0.090'/>
+</parse>
+<phase_done nodes='190' stamp='0.090'/>
+</phase>
+<phase name='optimizer' nodes='190' stamp='0.090'>
+<phase name='idealLoop' nodes='191' stamp='0.090'>
+<loop_tree>
+<loop idx='191' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='195' stamp='0.090'/>
+</phase>
+<phase name='idealLoop' nodes='195' stamp='0.091'>
+<loop_tree>
+<loop idx='200' >
+</loop>
+</loop_tree>
+<phase_done nodes='221' stamp='0.091'/>
+</phase>
+<phase name='idealLoop' nodes='221' stamp='0.091'>
+<loop_tree>
+<loop idx='293' inner_loop='1' main_loop='293' >
+</loop>
+</loop_tree>
+<phase_done nodes='315' stamp='0.091'/>
+</phase>
+<phase name='ccp' nodes='315' stamp='0.091'>
+<phase_done nodes='315' stamp='0.091'/>
+</phase>
+<phase name='idealLoop' nodes='315' stamp='0.091'>
+<loop_tree>
+<loop idx='259' inner_loop='1' pre_loop='200' >
+</loop>
+<loop idx='348' inner_loop='1' main_loop='348' >
+</loop>
+<loop idx='232' inner_loop='1' post_loop='200' >
+</loop>
+</loop_tree>
+<phase_done nodes='378' stamp='0.092'/>
+</phase>
+<phase name='idealLoop' nodes='378' stamp='0.092'>
+<loop_tree>
+<loop idx='259' inner_loop='1' pre_loop='200' >
+</loop>
+<loop idx='348' inner_loop='1' main_loop='348' >
+</loop>
+<loop idx='232' inner_loop='1' post_loop='200' >
+</loop>
+</loop_tree>
+<phase_done nodes='384' stamp='0.092'/>
+</phase>
+<phase name='idealLoop' nodes='384' stamp='0.092'>
+<loop_tree>
+<loop idx='259' inner_loop='1' pre_loop='200' >
+</loop>
+<loop idx='348' inner_loop='1' main_loop='348' >
+</loop>
+<loop idx='232' inner_loop='1' post_loop='200' >
+</loop>
+</loop_tree>
+<phase_done nodes='387' stamp='0.092'/>
+</phase>
+<phase_done nodes='390' stamp='0.092'/>
+</phase>
+<phase name='matcher' nodes='390' stamp='0.092'>
+<phase_done nodes='150' stamp='0.092'/>
+</phase>
+<phase name='regalloc' nodes='190' stamp='0.092'>
+<regalloc attempts='2' success='1'/>
+<phase_done nodes='221' stamp='0.093'/>
+</phase>
+<phase name='output' nodes='223' stamp='0.093'>
+<phase_done nodes='241' stamp='0.093'/>
+</phase>
+<task_done success='1' nmsize='408' count='827' backedge_count='7052' stamp='0.093'/>
+</task>
+<task compile_id='2' method='java/lang/String indexOf (II)I' bytes='70' count='433' backedge_count='5075' iicount='433' stamp='0.320'>
+<phase name='parse' nodes='3' stamp='0.320'>
+<type id='620' name='int'/>
+<klass id='632' name='java/lang/String' flags='17'/>
+<method id='720' holder='632' name='indexOf' return='620' arguments='620 620' flags='1' bytes='70' iicount='433'/>
+<parse method='720' uses='433' stamp='0.320'>
+<bc code='190' bci='4'/>
+<uncommon_trap bci='4' reason='null_check' action='maybe_recompile'/>
+<bc code='156' bci='7'/>
+<branch target_bci='15' taken='223' not_taken='0' cnt='223' prob='always'/>
+<bc code='161' bci='17'/>
+<branch target_bci='22' taken='191' not_taken='32' cnt='223' prob='0.856502'/>
+<bc code='162' bci='25'/>
+<branch target_bci='63' taken='0' not_taken='191' cnt='191' prob='never'/>
+<bc code='162' bci='40'/>
+<branch target_bci='61' taken='192' not_taken='6566' cnt='6758' prob='0.0284108'/>
+<uncommon_trap bci='43' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='43' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='52' bci='47'/>
+<uncommon_trap bci='47' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='47' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='160' bci='49'/>
+<branch target_bci='55' taken='6566' not_taken='0' cnt='6566' prob='always'/>
+<bc code='162' bci='40'/>
+<branch target_bci='61' taken='192' not_taken='6566' cnt='6566' prob='0.0284108'/>
+<bc code='183' bci='66'/>
+<method id='722' holder='632' name='indexOfSupplementary' return='620' arguments='620 620' flags='2' bytes='71' iicount='1'/>
+<call method='722' count='0' prof_factor='1' inline='1'/>
+<inline_fail reason='too big'/>
+<direct_call bci='66'/>
+<parse_done nodes='188' memory='48832' stamp='0.321'/>
+</parse>
+<phase_done nodes='190' stamp='0.321'/>
+</phase>
+<phase name='optimizer' nodes='190' stamp='0.321'>
+<phase name='idealLoop' nodes='190' stamp='0.321'>
+<loop_tree>
+<loop idx='196' >
+</loop>
+</loop_tree>
+<phase_done nodes='197' stamp='0.321'/>
+</phase>
+<phase name='idealLoop' nodes='197' stamp='0.321'>
+<loop_tree>
+<loop idx='196' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='210' stamp='0.321'/>
+</phase>
+<phase name='idealLoop' nodes='210' stamp='0.321'>
+<loop_tree>
+<loop idx='281' inner_loop='1' main_loop='281' >
+</loop>
+</loop_tree>
+<phase_done nodes='303' stamp='0.321'/>
+</phase>
+<phase name='ccp' nodes='303' stamp='0.321'>
+<phase_done nodes='303' stamp='0.321'/>
+</phase>
+<phase name='idealLoop' nodes='303' stamp='0.321'>
+<loop_tree>
+<loop idx='248' inner_loop='1' pre_loop='196' >
+</loop>
+<loop idx='326' inner_loop='1' main_loop='326' >
+</loop>
+<loop idx='221' inner_loop='1' post_loop='196' >
+</loop>
+</loop_tree>
+<phase_done nodes='361' stamp='0.322'/>
+</phase>
+<phase name='idealLoop' nodes='361' stamp='0.322'>
+<loop_tree>
+<loop idx='248' inner_loop='1' pre_loop='196' >
+</loop>
+<loop idx='326' inner_loop='1' main_loop='326' >
+</loop>
+<loop idx='221' inner_loop='1' post_loop='196' >
+</loop>
+</loop_tree>
+<phase_done nodes='366' stamp='0.322'/>
+</phase>
+<phase name='idealLoop' nodes='366' stamp='0.322'>
+<loop_tree>
+<loop idx='248' inner_loop='1' pre_loop='196' >
+</loop>
+<loop idx='326' inner_loop='1' main_loop='326' >
+</loop>
+<loop idx='221' inner_loop='1' post_loop='196' >
+</loop>
+</loop_tree>
+<phase_done nodes='369' stamp='0.322'/>
+</phase>
+<phase_done nodes='372' stamp='0.322'/>
+</phase>
+<phase name='matcher' nodes='372' stamp='0.322'>
+<phase_done nodes='169' stamp='0.322'/>
+</phase>
+<phase name='regalloc' nodes='242' stamp='0.322'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='251' stamp='0.323'/>
+</phase>
+<phase name='output' nodes='253' stamp='0.323'>
+<phase_done nodes='278' stamp='0.323'/>
+</phase>
+<task_done success='1' nmsize='424' count='436' backedge_count='5252' stamp='0.323'/>
+</task>
+<task compile_id='4' method='java/lang/String charAt (I)C' bytes='29' count='5000' backedge_count='1' iicount='10000' stamp='0.325'>
+<phase name='parse' nodes='3' stamp='0.325'>
+<type id='615' name='char'/>
+<type id='620' name='int'/>
+<klass id='632' name='java/lang/String' flags='17'/>
+<method id='720' holder='632' name='charAt' return='615' arguments='620' flags='1' bytes='29' iicount='10000'/>
+<klass id='722' name='java/lang/StringIndexOutOfBoundsException' unloaded='1'/>
+<uncommon_trap method='720' bci='13' reason='unloaded' action='reinterpret' index='6' klass='722'/>
+<parse method='720' uses='10000' stamp='0.325'>
+<bc code='155' bci='1'/>
+<branch target_bci='13' taken='0' not_taken='6700' cnt='6700' prob='never'/>
+<bc code='190' bci='9'/>
+<uncommon_trap bci='9' reason='null_check' action='maybe_recompile'/>
+<bc code='161' bci='10'/>
+<branch target_bci='22' taken='6700' not_taken='0' cnt='6700' prob='always'/>
+<bc code='52' bci='27'/>
+<uncommon_trap bci='27' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='187' bci='13'/>
+<uncommon_trap bci='13' reason='unloaded' action='reinterpret' index='6'/>
+<parse_done nodes='95' memory='31768' stamp='0.325'/>
+</parse>
+<phase_done nodes='96' stamp='0.325'/>
+</phase>
+<phase name='optimizer' nodes='96' stamp='0.325'>
+<phase name='ccp' nodes='96' stamp='0.325'>
+<phase_done nodes='96' stamp='0.325'/>
+</phase>
+<phase name='idealLoop' nodes='96' stamp='0.325'>
+<phase_done nodes='96' stamp='0.326'/>
+</phase>
+<phase_done nodes='99' stamp='0.326'/>
+</phase>
+<phase name='matcher' nodes='99' stamp='0.326'>
+<phase_done nodes='51' stamp='0.326'/>
+</phase>
+<phase name='regalloc' nodes='67' stamp='0.326'>
+<regalloc attempts='0' success='1'/>
+<phase_done nodes='69' stamp='0.326'/>
+</phase>
+<phase name='output' nodes='69' stamp='0.326'>
+<phase_done nodes='82' stamp='0.326'/>
+</phase>
+<task_done success='1' nmsize='184' count='5000' backedge_count='1' stamp='0.326'/>
+</task>
+<task compile_id='5' method='java/util/Arrays fill ([BIIB)V' bytes='28' count='10000' backedge_count='5781' iicount='401' stamp='0.362'>
+<phase name='parse' nodes='3' stamp='0.362'>
+<type id='622' name='void'/>
+<klass id='714' name='[B' flags='1041'/>
+<type id='620' name='int'/>
+<type id='618' name='byte'/>
+<klass id='720' name='java/util/Arrays' flags='1'/>
+<method id='721' holder='720' name='fill' return='622' arguments='714 620 620 618' flags='9' bytes='28' iicount='401'/>
+<parse method='721' uses='401' stamp='0.362'>
+<bc code='190' bci='1'/>
+<uncommon_trap bci='1' reason='null_check' action='maybe_recompile'/>
+<bc code='184' bci='4'/>
+<method id='723' holder='720' name='rangeCheck' return='622' arguments='620 620 620' flags='10' bytes='74' iicount='401'/>
+<call method='723' count='167' prof_factor='1' inline='1'/>
+<klass id='724' name='java/lang/ArrayIndexOutOfBoundsException' unloaded='1'/>
+<uncommon_trap method='723' bci='64' reason='unloaded' action='reinterpret' index='47' klass='724'/>
+<uncommon_trap method='723' bci='50' reason='unloaded' action='reinterpret' index='47' klass='724'/>
+<klass id='725' name='java/lang/IllegalArgumentException' flags='1'/>
+<uncommon_trap method='723' bci='5' reason='unloaded' action='reinterpret' index='37' klass='725'/>
+<parse method='723' uses='167' stamp='0.362'>
+<bc code='187' bci='5'/>
+<uncommon_trap bci='5' reason='unloaded' action='reinterpret' index='37'/>
+<bc code='187' bci='50'/>
+<uncommon_trap bci='50' reason='unloaded' action='reinterpret' index='47'/>
+<bc code='187' bci='64'/>
+<uncommon_trap bci='64' reason='unloaded' action='reinterpret' index='47'/>
+<parse_done nodes='90' memory='33080' stamp='0.362'/>
+</parse>
+<bc code='162' bci='13'/>
+<branch target_bci='27' taken='168' not_taken='60173' cnt='60341' prob='0.00278418'/>
+<uncommon_trap bci='16' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='16' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='84' bci='20'/>
+<uncommon_trap bci='20' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='162' bci='13'/>
+<branch target_bci='27' taken='168' not_taken='60173' cnt='60173' prob='0.00278418'/>
+<parse_done nodes='173' memory='48536' stamp='0.362'/>
+</parse>
+<phase_done nodes='174' stamp='0.362'/>
+</phase>
+<phase name='optimizer' nodes='174' stamp='0.362'>
+<phase name='idealLoop' nodes='178' stamp='0.362'>
+<loop_tree>
+<loop idx='184' >
+</loop>
+</loop_tree>
+<phase_done nodes='199' stamp='0.363'/>
+</phase>
+<phase name='idealLoop' nodes='199' stamp='0.363'>
+<loop_tree>
+<loop idx='184' inner_loop='1' >
+</loop>
+</loop_tree>
+<phase_done nodes='207' stamp='0.363'/>
+</phase>
+<phase name='idealLoop' nodes='207' stamp='0.363'>
+<phase_done nodes='207' stamp='0.363'/>
+</phase>
+<phase name='ccp' nodes='207' stamp='0.363'>
+<phase_done nodes='207' stamp='0.363'/>
+</phase>
+<phase_done nodes='208' stamp='0.363'/>
+</phase>
+<phase name='matcher' nodes='208' stamp='0.363'>
+<phase_done nodes='87' stamp='0.363'/>
+</phase>
+<phase name='regalloc' nodes='114' stamp='0.363'>
+<regalloc attempts='1' success='1'/>
+<phase_done nodes='141' stamp='0.363'/>
+</phase>
+<phase name='output' nodes='141' stamp='0.363'>
+<phase_done nodes='155' stamp='0.363'/>
+</phase>
+<task_done success='1' nmsize='280' count='10000' backedge_count='5781' inlined_bytes='74' stamp='0.364'/>
+</task>
+<task compile_id='6' method='java/util/Properties$LineReader readLine ()I' bytes='452' count='121' backedge_count='7504' iicount='121' stamp='0.378'>
+<phase name='parse' nodes='3' stamp='0.378'>
+<type id='620' name='int'/>
+<klass id='720' name='java/util/Properties$LineReader' flags='0'/>
+<method id='721' holder='720' name='readLine' return='620' flags='0' bytes='452' iicount='121'/>
+<parse method='721' uses='121' stamp='0.378'>
+<uncommon_trap bci='21' reason='predicate' action='maybe_recompile'/>
+<uncommon_trap bci='21' reason='loop_limit_check' action='maybe_recompile'/>
+<bc code='161' bci='29'/>
+<branch target_bci='93' taken='9265' not_taken='1' cnt='9266' prob='0.999892'/>
+<bc code='199' bci='37'/>
+<branch target_bci='54' taken='1' not_taken='0'/>
+<bc code='182' bci='48'/>
+<klass id='711' name='[C' flags='1041'/>
+<klass id='726' name='java/io/Reader' flags='1025'/>
+<method id='727' holder='726' name='read' return='620' arguments='711' flags='1' bytes='9' iicount='1'/>
+<call method='727' count='0' prof_factor='1' virtual='1' inline='1'/>
+<virtual_call bci='48'/>
+<bc code='182' bci='62'/>
+<klass id='723' name='sun/net/www/protocol/jar/JarURLConnection$JarURLInputStream' flags='0'/>
+<klass id='714' name='[B' flags='1041'/>
+<klass id='724' name='java/io/InputStream' flags='1025'/>
+<method id='725' holder='724' name='read' return='620' arguments='714' flags='1' bytes='9' iicount='1'/>
+<call method='725' count='1' prof_factor='1' virtual='1' inline='1' receiver='723' receiver_count='1'/>
+<klass id='729' name='java/io/FilterInputStream' flags='1'/>
+<method id='730' holder='729' name='read' return='620' arguments='714' flags='1' bytes='9' iicount='2'/>
+<call method='730' count='1' prof_factor='1' inline='1'/>
+<inline_fail reason='executed &lt; MinInliningThreshold times'/>
+<predicted_call bci='62' klass='723'/>
+<uncommon_trap bci='62' reason='class_check' action='maybe_recompile' comment='monomorphic vcall checkcast'/>
+<direct_call bci='62'/>
+<bc code='157' bci='77'/>
+<branch target_bci='93' taken='1' not_taken='0'/>
+<bc code='153' bci='81'/>
+<branch target_bci='89' taken='0' not_taken='0'/>
+<bc code='153' bci='86'/>
+<branch target_bci='91' taken='0' not_taken='0'/>
+<bc code='198' bci='97'/>
+<branch target_bci='125' taken='0' not_taken='9266' cnt='9266' prob='never'/>
+<uncommon_trap bci='97' reason='unreached' action='reinterpret' comment='taken never'/>
+<bc code='51' bci='118'/>
+<uncommon_trap bci='118' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='118' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='153' bci='144'/>
+<branch target_bci='159' taken='9266' not_taken='0' cnt='9266' prob='always'/>
+<bc code='160' bci='153'/>
+<branch target_bci='159' taken='0' not_taken='0'/>
+<bc code='153' bci='160'/>
+<branch target_bci='209' taken='8436' not_taken='830' cnt='9266' prob='0.910425'/>
+<bc code='159' bci='166'/>
+<branch target_bci='21' taken='720' not_taken='110' cnt='830' prob='0.86747'/>
+<bc code='159' bci='172'/>
+<branch target_bci='21' taken='0' not_taken='110' cnt='110' prob='never'/>
+<bc code='160' bci='178'/>
+<branch target_bci='184' taken='110' not_taken='0' cnt='110' prob='always'/>
+<bc code='154' bci='186'/>
+<branch target_bci='204' taken='0' not_taken='110' cnt='110' prob='never'/>
+<bc code='159' bci='192'/>
+<branch target_bci='21' taken='0' not_taken='110' cnt='110' prob='never'/>
+<bc code='160' bci='198'/>
+<branch target_bci='204' taken='108' not_taken='2' cnt='110' prob='0.981818'/>
+<bc code='153' bci='211'/>
+<branch target_bci='235' taken='8436' not_taken='108' cnt='8544' prob='0.98736'/>
+<bc code='159' bci='220'/>
+<branch target_bci='229' taken='20' not_taken='88' cnt='108' prob='0.185185'/>
+<bc code='160' bci='226'/>
+<branch target_bci='235' taken='88' not_taken='0' cnt='88' prob='always'/>
+<bc code='159' bci='238'/>
+<branch target_bci='339' taken='108' not_taken='8416' cnt='8524' prob='0.0126701'/>
+<bc code='159' bci='244'/>
+<branch target_bci='339' taken='0' not_taken='8416' cnt='8416' prob='never'/>
+<bc code='85' bci='256'/>
+<uncommon_trap bci='256' reason='null_check' action='maybe_recompile'/>
+<uncommon_trap bci='256' reason='range_check' action='make_not_entrant' comment='range_check'/>
+<bc code='160' bci='263'/>
+<branch target_bci='312' taken='8416' not_taken='0' cnt='8416' prob='always'/>
+<bc code='156' bci='277'/>
+<branch target_bci='284' taken='0' not_taken='0'/>
+<bc code='188' bci='286'/>
+<klass id='652' name='java/lang/OutOfMemoryError' flags='1'/>
+<dependency type='leaf_type' ctxk='652'/>
+<bc code='190' bci='302'/>
+<uncommon_trap bci='302' reason='null_check' action='maybe_recompile'/>
+<bc code='184' bci='303'/>
+<type id='622' name='void'/>
+<klass id='631' name='java/lang/Object' flags='1'/>
+<klass id='637' name='java/lang/System' flags='17'/>
+<method id='728' holder='637' name='arraycopy' return='622' arguments='631 620 631 620 620' flags='265' bytes='0' iicount='3251'/>
+<call method='728' count='0' prof_factor='1' inline='1'/>
+<intrinsic id='_arraycopy' nodes='102'/>
+<bc code='160' bci='315'/>
+<branch target_bci='333' taken='8308' not_taken='107' cnt='8415' prob='0.987285'/>
+<bc code='154' bci='320'/>
+<branch target_bci='327' taken='0' not_taken='107' cnt='107' prob='never'/>
+<bc code='154' bci='341'/>
+<branch target_bci='348' taken='20' not_taken='88' cnt='108' prob='0.185185'/>
+<bc code='154' bci='345'/>
+<branch target_bci='361' taken='88' not_taken='0' cnt='88' prob='always'/>
+<bc code='161' bci='369'/>
+<branch target_bci='422' taken='88' not_taken='0' cnt='88' prob='always'/>
+<bc code='199' bci='377'/>
+<branch target_bci='394' taken='0' not_taken='0'/>
+<bc code='182' bci='388'/>
+<call method='727' count='0' prof_factor='1' virtual='1' inline='1'/>
+<virtual_call bci='388'/>
+<bc code='182' bci='402'/>
+<call method='725' count='0' prof_factor='1' virtual='1' inline='1'/>
+<virtual_call bci='402'/>
+<bc code='157' bci='417'/>
+<branch target_bci='422' taken='0' not_taken='0'/>
+<bc code='153' bci='424'/>
+<branch target_bci='450' taken='88' not_taken='0' cnt='88' prob='always'/>
+<bc code='160' bci='441'/>
+<branch target_bci='21' taken='0' not_taken='0'/>
+<parse_done nodes='854' memory='203056' stamp='0.395'/>
+</parse>
+<phase_done nodes='864' stamp='0.396'/>
+</phase>
+<phase name='optimizer' nodes='864' stamp='0.396'>
+<phase name='idealLoop' nodes='884' stamp='0.396'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='905' stamp='0.396'/>
+</phase>
+<phase name='escapeAnalysis' nodes='905' stamp='0.396'>
+<phase_done nodes='906' stamp='0.397'/>
+</phase>
+<phase name='idealLoop' nodes='906' stamp='0.397'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='995' stamp='0.397'/>
+</phase>
+<phase name='idealLoop' nodes='995' stamp='0.397'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='995' stamp='0.398'/>
+</phase>
+<phase name='idealLoop' nodes='995' stamp='0.398'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='995' stamp='0.398'/>
+</phase>
+<phase name='ccp' nodes='995' stamp='0.398'>
+<phase_done nodes='995' stamp='0.398'/>
+</phase>
+<phase name='idealLoop' nodes='1002' stamp='0.398'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1048' stamp='0.399'/>
+</phase>
+<phase name='idealLoop' nodes='1048' stamp='0.399'>
+<loop_tree>
+<loop idx='894' >
+<loop idx='904' inner_loop='1' >
+</loop>
+</loop>
+</loop_tree>
+<phase_done nodes='1091' stamp='0.400'/>
+</phase>
+<phase_done nodes='1159' stamp='0.400'/>
+</phase>
+<phase name='matcher' nodes='1159' stamp='0.400'>
+<phase_done nodes='605' stamp='0.400'/>
+</phase>
+<phase name='regalloc' nodes='772' stamp='0.401'>
+<regalloc attempts='2' success='1'/>
+<phase_done nodes='1298' stamp='0.412'/>
+</phase>
+<phase name='output' nodes='1300' stamp='0.412'>
+<phase_done nodes='1335' stamp='0.412'/>
+</phase>
+<dependency type='leaf_type' ctxk='652'/>
+<task_done success='1' nmsize='2056' count='5000' backedge_count='5148' stamp='0.413'/>
+</task>
+</compilation_log>
+<hotspot_log_done stamp='2.223'/>
+</hotspot_log>
