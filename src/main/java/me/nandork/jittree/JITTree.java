@@ -1,33 +1,24 @@
 /*
- *  Copyright (c) 2013, Nandor Kracser (bonifaido@gmail.com)
- *  All rights reserved.
- *
- *  Redistribution and use in source and binary forms, with or without
- *  modification, are permitted provided that the following conditions
- *  are met:
- *  
- *  1. Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *  
- *  2. Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in the
- *     documentation and/or other materials provided with the distribution.
- *  
- *  3. Neither the name of the copyright holders nor the names of its
- *     contributors may be used to endorse or promote products derived from
- *     this software without specific prior written permission.
- *  
- *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- *  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- *  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- *  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- *  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- *  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- *  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- *  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
- *  THE POSSIBILITY OF SUCH DAMAGE.
+ * Copyright 2013 Nandor Kracser (bonifaido@gmail.com)
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package me.nandork.jittree;
 
@@ -41,6 +32,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -56,6 +48,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTree;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.UIManager;
@@ -64,12 +57,15 @@ import javax.swing.event.DocumentListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreeNode;
 
-class JITTreeCellHighLighter extends DefaultTreeCellRenderer {
+class JITTreeCellRenderer extends DefaultTreeCellRenderer {
 
     private Set<TreeNode> matchingNodes;
+
+    public void setMatchingNodes(Set<TreeNode> matchingNodes) {
+        this.matchingNodes = matchingNodes;
+    }
 
     @Override
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
@@ -88,22 +84,17 @@ class JITTreeCellHighLighter extends DefaultTreeCellRenderer {
         }
         return c;
     }
-
-    public void setMatchingNodes(Set<TreeNode> matchingNodes) {
-        this.matchingNodes = matchingNodes;
-    }
 }
 
 /**
- * This class is kinda immutable (despite of the super class),
- * that's why a lot of values are cached.
+ * This class is kinda immutable (despite of the super class), that's why a lot
+ * of values are cached.
  */
 class JITNode extends DefaultMutableTreeNode {
 
     private final CallSite callSite;
-    private final List<CallSite> callSites;
     private final String asString;
-    private final TreeNode[] childCache;
+    private List<TreeNode> childNodes;
     private TreeNode[] pathCache;
 
     public JITNode(CallSite callSite) {
@@ -114,12 +105,16 @@ class JITNode extends DefaultMutableTreeNode {
         this.callSite = callSite;
         setParent(parent);
         List<CallSite> innerCallSites = callSite.getCalls();
-        callSites = innerCallSites != null ? innerCallSites : Collections.EMPTY_LIST;
+        innerCallSites = innerCallSites != null ? innerCallSites : Collections.<CallSite>emptyList();
 
         String reason = callSite.getReason();
         asString = callSite.getMethod().toString() + " " + (reason != null ? reason : "");
 
-        childCache = new TreeNode[callSites.size()];
+        childNodes = new ArrayList<>();
+        for (int i = 0; i < innerCallSites.size(); i++) {
+            CallSite cs = innerCallSites.get(i);
+            childNodes.add(new JITNode(cs, this));
+        }
     }
 
     public CallSite callSite() {
@@ -128,16 +123,12 @@ class JITNode extends DefaultMutableTreeNode {
 
     @Override
     public TreeNode getChildAt(int childIndex) {
-        if (childCache[childIndex] == null) {
-            CallSite cs = callSites.get(childIndex);
-            childCache[childIndex] = new JITNode(cs, this);
-        }
-        return childCache[childIndex];
+        return childNodes.get(childIndex);
     }
 
     @Override
     public int getChildCount() {
-        return callSites.size();
+        return childNodes.size();
     }
 
     @Override
@@ -145,32 +136,17 @@ class JITNode extends DefaultMutableTreeNode {
         return true;
     }
 
-    // cached version
     @Override
     public TreeNode[] getPath() {
-        if (pathCache == null)
+        if (pathCache == null) {
             pathCache = super.getPath();
+        }
         return pathCache;
     }
 
-    // TODO should be cached locally in function
     @Override
     public Enumeration children() {
-        List<TreeNode> childNodes = new ArrayList<>(callSites.size());
-        for (int i = 0; i < callSites.size(); i++) {
-            childNodes.add(getChildAt(i));
-        }
         return Collections.enumeration(childNodes);
-    }
-
-    // TODO should be cached locally in function
-    public List<JITNode> allChildNodes() {
-        List<JITNode> childs = new ArrayList<>();
-        Enumeration e = breadthFirstEnumeration();
-        while (e.hasMoreElements()) {
-            childs.add((JITNode) e.nextElement());
-        }
-        return childs;
     }
 
     @Override
@@ -180,11 +156,12 @@ class JITNode extends DefaultMutableTreeNode {
 }
 
 class DelayedDocumentListener implements DocumentListener {
+
     private final Timer timer;
     private DocumentEvent lastEvent;
 
     public DelayedDocumentListener(DocumentListener delegate) {
-        this(delegate, 500);
+        this(delegate, 400);
     }
 
     public DelayedDocumentListener(final DocumentListener delegate, int delay) {
@@ -228,8 +205,8 @@ public class JITTree extends JFrame {
 
     private final JTextField searchField = new JTextField();
     private final JTree tree = new JTree(new Object[0]);
-    private List<JITNode> allNodes = Collections.EMPTY_LIST;
-    private JITTreeCellHighLighter cellRenderer = new JITTreeCellHighLighter();
+    private List<JITNode> allNodes = Collections.<JITNode>emptyList();
+    private JITTreeCellRenderer cellRenderer = new JITTreeCellRenderer();
 
     public JITTree() {
         super("JIT Tree");
@@ -246,20 +223,21 @@ public class JITTree extends JFrame {
             private Set<TreeNode> matchingNodes = new HashSet<>();
 
             private void search() {
-                String term = searchField.getText();
+                String term = searchField.getText().toLowerCase();
                 if (term.isEmpty()) {
                     cellRenderer.setMatchingNodes(null);
                 } else {
-                    matchingNodes.clear();
                     System.out.println("Searching for " + term);
+                    matchingNodes.clear();
                     for (JITNode node : allNodes) {
-                        if (node.toString().contains(term)) {
+                        if (node.toString().toLowerCase().contains(term)) {
+                            // adding the node's path to enable the... path
                             Collections.addAll(matchingNodes, node.getPath());
                         }
                     }
                     cellRenderer.setMatchingNodes(matchingNodes);
                 }
-                tree.repaint();
+                tree.treeDidChange();
             }
 
             @Override
@@ -278,12 +256,15 @@ public class JITTree extends JFrame {
         }));
     }
 
+    @SuppressWarnings("unchecked")
     private void setRootNode(JITNode node) {
-        allNodes = node.allChildNodes();
+        allNodes = Collections.list(node.breadthFirstEnumeration());
         tree.setModel(new DefaultTreeModel(node));
+        // triggers an update event in the document to refilter the nodes
+        searchField.setText(searchField.getText());
     }
 
-    private JITNode loadFromFile(String fileName) throws Exception {
+    private JITNode parseFile(String fileName) throws Exception {
         List<LogEvent> events = LogParser.parse(fileName, true);
         Collections.sort(events, LogParser.sortByStart);
 
@@ -299,7 +280,7 @@ public class JITTree extends JFrame {
         }
 
         Method m = new Method();
-        m.setHolder("Main");
+        m.setHolder("main");
         m.setName("main");
 
         CallSite rootCallSite = new CallSite();
@@ -309,9 +290,9 @@ public class JITTree extends JFrame {
         return new JITNode(rootCallSite);
     }
 
-    private void loadFile(String fileName) {
+    public void loadFile(String fileName) {
         try {
-            JITNode rootNode = loadFromFile(fileName);
+            JITNode rootNode = parseFile(fileName);
             setRootNode(rootNode);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, fileName + " is not parsable",
@@ -334,12 +315,16 @@ public class JITTree extends JFrame {
                 }
             }
         });
+        if (System.getProperty("os.name").contains("OS X")) {
+            open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.META_MASK));
+        } else {
+            open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_MASK));
+        }
         menuBar.add(file);
         return menuBar;
     }
 
     public static void main(final String[] args) throws Exception {
-
         System.setProperty("apple.laf.useScreenMenuBar", "true");
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 

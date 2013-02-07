@@ -8,6 +8,7 @@
     <project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
   </properties>
   <build>
+    <finalName>jittree</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -38,8 +39,6 @@
                   <mainClass>me.nandork.jittree.JITTree</mainClass>
                 </transformer>
               </transformers>
-              <minimizeJar>true</minimizeJar>
-              <!-- removes unused classes -->
             </configuration>
           </execution>
         </executions>
