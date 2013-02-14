@@ -15,7 +15,7 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -111,8 +111,7 @@ class JITNode extends DefaultMutableTreeNode {
         asString = callSite.getMethod().toString() + " " + (reason != null ? reason : "");
 
         childNodes = new ArrayList<>();
-        for (int i = 0; i < innerCallSites.size(); i++) {
-            CallSite cs = innerCallSites.get(i);
+        for (CallSite cs : innerCallSites) {
             childNodes.add(new JITNode(cs, this));
         }
     }
@@ -205,7 +204,7 @@ public class JITTree extends JFrame {
 
     private final JTextField searchField = new JTextField();
     private final JTree tree = new JTree(new Object[0]);
-    private List<JITNode> allNodes = Collections.<JITNode>emptyList();
+    private List<JITNode> allNodes = Collections.emptyList();
     private JITTreeCellRenderer cellRenderer = new JITTreeCellRenderer();
 
     public JITTree() {
@@ -227,7 +226,6 @@ public class JITTree extends JFrame {
                 if (term.isEmpty()) {
                     cellRenderer.setMatchingNodes(null);
                 } else {
-                    System.out.println("Searching for " + term);
                     matchingNodes.clear();
                     for (JITNode node : allNodes) {
                         if (node.toString().toLowerCase().contains(term)) {
@@ -260,7 +258,7 @@ public class JITTree extends JFrame {
     private void setRootNode(JITNode node) {
         allNodes = Collections.list(node.breadthFirstEnumeration());
         tree.setModel(new DefaultTreeModel(node));
-        // triggers an update event in the document to refilter the nodes
+        // triggers an update event in the document to re-filter the nodes
         searchField.setText(searchField.getText());
     }
 
@@ -295,7 +293,7 @@ public class JITTree extends JFrame {
             JITNode rootNode = parseFile(fileName);
             setRootNode(rootNode);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, fileName + " is not parsable",
+            JOptionPane.showMessageDialog(null, fileName + " is not parseable",
                     "Unable to load file", JOptionPane.ERROR_MESSAGE);
         }
     }
