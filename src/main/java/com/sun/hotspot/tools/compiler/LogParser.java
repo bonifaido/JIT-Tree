@@ -332,6 +332,8 @@ public class LogParser extends DefaultHandler implements ErrorHandler, Constants
             compile.setAttempts(Integer.parseInt(search(atts, "attempts")));
         } else if (qname.equals("inline_fail")) {
             scopes.peek().last().setReason(search(atts, "reason"));
+        } else if (qname.equals("intrinsic")) {
+            scopes.peek().last().setIntrinsic(true);
         } else if (qname.equals("failure")) {
             failureReason = search(atts, "reason");
         } else if (qname.equals("task_done")) {

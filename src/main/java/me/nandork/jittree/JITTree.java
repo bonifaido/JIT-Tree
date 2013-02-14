@@ -72,7 +72,9 @@ class JITTreeCellRenderer extends DefaultTreeCellRenderer {
         Component c = super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
         JITNode node = (JITNode) value;
         CallSite callSite = node.callSite();
-        if (node.toString().contains("(0 bytes)")) { // native
+        if (callSite.isIntrinsic()) {
+            c.setForeground(Color.blue);
+        } else if (node.toString().contains("(0 bytes)")) { // native
             c.setForeground(Color.gray);
         } else if (callSite.getReason() != null) {
             c.setForeground(Color.red);

@@ -39,6 +39,7 @@ public class CallSite {
     private List<CallSite> calls;
     private int endNodes;
     private double timeStamp;
+    private boolean intrinsic;
 
     public CallSite() {
     }
@@ -169,6 +170,14 @@ public class CallSite {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public void setIntrinsic(boolean intrinsic) {
+        this.intrinsic = intrinsic;
+    }
+
+    public boolean isIntrinsic() {
+        return intrinsic;
     }
 
     public List<CallSite> getCalls() {
