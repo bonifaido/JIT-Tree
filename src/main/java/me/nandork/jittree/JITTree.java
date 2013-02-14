@@ -27,6 +27,7 @@ import com.sun.hotspot.tools.compiler.Compilation;
 import com.sun.hotspot.tools.compiler.LogEvent;
 import com.sun.hotspot.tools.compiler.LogParser;
 import com.sun.hotspot.tools.compiler.Method;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
