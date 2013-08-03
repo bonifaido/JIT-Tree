@@ -29,14 +29,11 @@ import com.sun.hotspot.tools.compiler.LogParser;
 import com.sun.hotspot.tools.compiler.Method;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -51,157 +48,11 @@ import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
-import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-
-class JITTreeCellRenderer extends DefaultTreeCellRenderer {
-
-    private Set<TreeNode> matchingNodes;
-
-    public void setMatchingNodes(Set<TreeNode> matchingNodes) {
-        this.matchingNodes = matchingNodes;
-    }
-
-    @Override
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-        Component c = super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
-        JITNode node = (JITNode) value;
-        CallSite callSite = node.callSite();
-        if (callSite.isIntrinsic()) {
-            c.setForeground(Color.blue);
-        } else if (node.toString().contains("(0 bytes)")) { // native
-            c.setForeground(Color.gray);
-        } else if (callSite.getReason() != null) {
-            c.setForeground(Color.red);
-        }
-        if (matchingNodes != null) {
-            c.setEnabled(matchingNodes.contains(node));
-        } else {
-            c.setEnabled(true);
-        }
-        return c;
-    }
-}
-
-/**
- * This class is kinda immutable (despite of the super class), that's why a lot
- * of values are cached.
- */
-class JITNode extends DefaultMutableTreeNode {
-
-    private final CallSite callSite;
-    private final String asString;
-    private List<TreeNode> childNodes;
-    private TreeNode[] pathCache;
-
-    public JITNode(CallSite callSite) {
-        this(callSite, null);
-    }
-
-    public JITNode(CallSite callSite, JITNode parent) {
-        this.callSite = callSite;
-        setParent(parent);
-        List<CallSite> innerCallSites = callSite.getCalls();
-        innerCallSites = innerCallSites != null ? innerCallSites : Collections.<CallSite>emptyList();
-
-        String reason = callSite.getReason();
-        asString = callSite.getMethod().toString() + " " + (reason != null ? reason : "");
-
-        childNodes = new ArrayList<>();
-        for (CallSite cs : innerCallSites) {
-            childNodes.add(new JITNode(cs, this));
-        }
-    }
-
-    public CallSite callSite() {
-        return callSite;
-    }
-
-    @Override
-    public TreeNode getChildAt(int childIndex) {
-        return childNodes.get(childIndex);
-    }
-
-    @Override
-    public int getChildCount() {
-        return childNodes.size();
-    }
-
-    @Override
-    public boolean getAllowsChildren() {
-        return true;
-    }
-
-    @Override
-    public TreeNode[] getPath() {
-        if (pathCache == null) {
-            pathCache = super.getPath();
-        }
-        return pathCache;
-    }
-
-    @Override
-    public Enumeration children() {
-        return Collections.enumeration(childNodes);
-    }
-
-    @Override
-    public String toString() {
-        return asString;
-    }
-}
-
-class DelayedDocumentListener implements DocumentListener {
-
-    private final Timer timer;
-    private DocumentEvent lastEvent;
-
-    public DelayedDocumentListener(DocumentListener delegate) {
-        this(delegate, 400);
-    }
-
-    public DelayedDocumentListener(final DocumentListener delegate, int delay) {
-        timer = new Timer(delay, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                timer.stop();
-                if (lastEvent.getType() == DocumentEvent.EventType.INSERT) {
-                    delegate.insertUpdate(lastEvent);
-                } else if (lastEvent.getType() == DocumentEvent.EventType.REMOVE) {
-                    delegate.removeUpdate(lastEvent);
-                } else {
-                    delegate.changedUpdate(lastEvent);
-                }
-            }
-        });
-    }
-
-    private void storeUpdate(DocumentEvent e) {
-        lastEvent = e;
-        timer.restart();
-    }
-
-    @Override
-    public void insertUpdate(DocumentEvent e) {
-        storeUpdate(e);
-    }
-
-    @Override
-    public void removeUpdate(DocumentEvent e) {
-        storeUpdate(e);
-    }
-
-    @Override
-    public void changedUpdate(DocumentEvent e) {
-        storeUpdate(e);
-    }
-}
 
 public class JITTree extends JFrame {
 
@@ -316,13 +167,17 @@ public class JITTree extends JFrame {
                 }
             }
         });
-        if (System.getProperty("os.name").contains("OS X")) {
+        if (isOSX()) {
             open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.META_MASK));
         } else {
             open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_MASK));
         }
         menuBar.add(file);
         return menuBar;
+    }
+
+    private boolean isOSX() {
+        return System.getProperty("os.name").contains("OS X");
     }
 
     public static void main(final String[] args) throws Exception {
