@@ -22,15 +22,19 @@ class DelayedDocumentListener implements DocumentListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 timer.stop();
-                if (lastEvent.getType() == DocumentEvent.EventType.INSERT) {
-                    delegate.insertUpdate(lastEvent);
-                } else if (lastEvent.getType() == DocumentEvent.EventType.REMOVE) {
-                    delegate.removeUpdate(lastEvent);
-                } else {
-                    delegate.changedUpdate(lastEvent);
-                }
+                fireLastEventOn(delegate);
             }
         });
+    }
+
+    private void fireLastEventOn(DocumentListener delegate) {
+        if (lastEvent.getType() == DocumentEvent.EventType.INSERT) {
+            delegate.insertUpdate(lastEvent);
+        } else if (lastEvent.getType() == DocumentEvent.EventType.REMOVE) {
+            delegate.removeUpdate(lastEvent);
+        } else {
+            delegate.changedUpdate(lastEvent);
+        }
     }
 
     private void storeUpdate(DocumentEvent e) {

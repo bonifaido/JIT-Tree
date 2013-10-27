@@ -1,25 +1,3 @@
-/*
- * Copyright 2013 Nandor Kracser (bonifaido@gmail.com)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 package me.nandork.jittree;
 
 import com.sun.hotspot.tools.compiler.CallSite;
@@ -147,7 +125,7 @@ public class JITTree extends JFrame {
             JITNode rootNode = parseFile(fileName);
             setRootNode(rootNode);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, fileName + " is not parseable",
+            JOptionPane.showMessageDialog(null, fileName + " is not parsable",
                     "Unable to load file", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -178,21 +156,5 @@ public class JITTree extends JFrame {
 
     private boolean isOSX() {
         return System.getProperty("os.name").contains("OS X");
-    }
-
-    public static void main(final String[] args) throws Exception {
-        System.setProperty("apple.laf.useScreenMenuBar", "true");
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JITTree jitTree = new JITTree();
-                if (args.length > 0) {
-                    jitTree.loadFile(args[0]);
-                }
-                jitTree.setVisible(true);
-            }
-        });
     }
 }
