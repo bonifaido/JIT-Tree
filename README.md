@@ -1,5 +1,7 @@
 # JIT Tree
 
+[![Build Status](https://travis-ci.org/bonifaido/JIT-Tree.png?branch=master)](https://travis-ci.org/bonifaido/JIT-Tree)
+
 This tool will help you to analyze the output of the [JVM](http://www.oracle.com/technetwork/java/javase/overview/index.html)'s [-XX:+LogCompilation](https://wikis.oracle.com/display/HotSpotInternals/LogCompilation+overview) option.
 
 To enable this option you also need to pass: ```-XX:+UnlockDiagnosticVMOptions``` to the program under JIT logging.
